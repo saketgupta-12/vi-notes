@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-serif: "Crimson Text", Lora, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-100;
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Custom scrollbar to keep it distraction-free but beautiful */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e5e1d5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d0c8b6;
+}
+
+/* Base reset for textareas */
+textarea {
+  resize: none;
+  outline: none;
+}
