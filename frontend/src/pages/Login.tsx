@@ -29,7 +29,7 @@ const Login: React.FC = () => {
         setError(data.message || 'Login failed');
       }
     } catch (err) {
-      setError('Server connection error. Is the backend running?');
+      setError('Something went wrong. Please try again later.');
     } finally {
       setLoading(false);
     }

@@ -29,7 +29,7 @@ const Register: React.FC = () => {
         setError(data.message || 'Registration failed');
       }
     } catch (err) {
-      setError('Server connection error. Is the backend running?');
+      setError('Something went wrong. Please try again later.');
     } finally {
       setLoading(false);
     }
