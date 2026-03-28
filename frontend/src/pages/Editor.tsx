@@ -61,7 +61,7 @@ const Editor: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/sessions', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/sessions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
