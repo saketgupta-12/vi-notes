@@ -5,13 +5,11 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    setLoading(true);
     
     try {
       const res = await fetch('http://localhost:5000/api/auth/login', {
@@ -30,8 +28,6 @@ const Login: React.FC = () => {
       }
     } catch (err) {
       setError('Something went wrong. Please try again later.');
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -71,8 +67,8 @@ const Login: React.FC = () => {
                 required
               />
             </div>
-            <button type="submit" disabled={loading} className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl py-3 mt-4 shadow-[0_0_10px_rgba(37,99,235,0.2)] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:opacity-50 disabled:cursor-not-allowed">
-              {loading ? 'Signing In...' : 'Sign In'}
+            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl py-3 mt-4 shadow-[0_0_10px_rgba(37,99,235,0.2)] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+              Sign In
             </button>
           </form>
           <p className="mt-6 text-center text-sm text-slate-400">
